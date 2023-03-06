@@ -1,4 +1,4 @@
-import { getSpeciesResource } from "../adapters/xhr/axios";
+import { getSpeciesResource, getResource } from "../adapters/xhr/axios";
 import { SPECIES } from "../helpers/constants/swapiEndpoints";
 import { ISpecie } from "../helpers/interfaces/ISpecie";
 
@@ -11,7 +11,7 @@ export const getSpecies = async (...specieNames: Array<string>) => {
         } else {
             for (const name of specieNames) {
                 const promise = await getSpeciesResource(
-                    `${SPECIES}?search=${name}`
+                    `${SPECIES}?search=${name.toLocaleLowerCase()}`
                 );
                 response = response.concat(promise);
             }
@@ -21,4 +21,14 @@ export const getSpecies = async (...specieNames: Array<string>) => {
     }
 
     return response;
+};
+
+export const getUser = async (url: string) => {
+    if (!url) {
+        return;
+    }
+
+    try {
+        return await getResource(url);
+    } catch (error) {}
 };
