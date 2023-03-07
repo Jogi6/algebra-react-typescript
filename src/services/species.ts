@@ -32,3 +32,13 @@ export const getUser = async (url: string) => {
         return await getResource(url);
     } catch (error) {}
 };
+
+export const getVehicles = async (url: string) => {
+    if (!url) {
+        return;
+    }
+
+    try {
+        return await getResource(url);
+    } catch (error) {}
+};

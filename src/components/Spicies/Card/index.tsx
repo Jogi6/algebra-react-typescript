@@ -6,19 +6,19 @@ const Card = ( {specie}: any ) => {
             <div className="card-body">
                 <h5 className="card-title">{specie.name}</h5>
             </div>
-            <ul className="list-group list-group-flush"> 
-                <li className="list-grup-item">
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item">
                     <b>Classification: </b>
                     {specie.classification}
                 </li>
-                <li className="list-grup-item">
+                <li className="list-group-item">
                     <b>Designation: </b>
                     {specie.designation}
                 </li>
-                <li className="list-grup-item">
+                <li className="list-group-item">
                     <b>Language: </b>
                     {specie.language}
-                </li>  
+                </li>
             </ul>
         </div>
     );

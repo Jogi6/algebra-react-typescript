@@ -1,12 +1,9 @@
 import { ISpecie } from "../../helpers/interfaces/ISpecie";
 import {Link} from "react-router-dom"
 import Card from "./Card";
-import Navbar from "../Navbar";
 
 const Spicies = ({species}:any) => {
     return (
-        // <Navbar species={species}/>
-
         <div className="container mt-5">
             <div className="row">
                 {
